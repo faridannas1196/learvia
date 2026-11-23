@@ -1,9 +1,87 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+@config "../../tailwind.config.js";
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
+@source "../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php";
+@source "../../storage/framework/views/*.php";
+@source "../**/*.blade.php";
+@source "../**/*.js";
+@source "../**/*.jsx";
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+  --color-canvas: #F4F7FC;
+  --color-surface: #FFFFFF;
+  --color-surface-subtle: #F8FAFC;
+  --color-line: #E2E8F0;
+  --color-line-strong: #CBD5E1;
+
+  --color-ink-900: #0F172A;
+  --color-ink-700: #334155;
+  --color-ink-500: #64748B;
+
+  /* Palet Resmi Learvia: Deep Navy Indigo ke Ocean Teal Cyan */
+  --color-primary-50: #EDF5FA;
+  --color-primary-100: #E0EEF5;
+  --color-primary-200: #C3DDEB;
+  --color-primary-300: #93C6DD;
+  --color-primary-400: #4AAABF;
+  --color-primary-500: #307997;
+  --color-primary-600: #233371;
+  --color-primary-700: #1C285E;
+  --color-primary-800: #17204E;
+  --color-primary-900: #11183E;
+
+  --color-tint-blue-fg: #233371;
+  --color-tint-blue-bg: #EDF5FA;
+  --color-tint-green-fg: #16A34A;
+  --color-tint-green-bg: #F0FDF4;
+  --color-tint-purple-fg: #9333EA;
+  --color-tint-purple-bg: #FAF5FF;
+  --color-tint-orange-fg: #D97706;
+  --color-tint-orange-bg: #FFFBEB;
+  --color-tint-pink-fg: #E11D48;
+  --color-tint-pink-bg: #FFF1F2;
+  --color-tint-cyan-fg: #207C91;
+  --color-tint-cyan-bg: #E6F6F8;
+
+  --color-success-fg: #16A34A;
+  --color-success-bg: #F0FDF4;
+  --color-warning-fg: #D97706;
+  --color-warning-bg: #FFFBEB;
+  --color-danger-fg: #E11D48;
+  --color-danger-bg: #FFF1F2;
+  --color-neutral-fg: #475569;
+  --color-neutral-bg: #F1F5F9;
+  --color-info-fg: #233371;
+  --color-info-bg: #EDF5FA;
+  --color-excuse-fg: #9333EA;
+  --color-excuse-bg: #FAF5FF;
+  --color-sick-fg: #207C91;
+  --color-sick-bg: #E6F6F8;
+
+  --shadow-e1: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+  --shadow-e2: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-e3: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: env(safe-area-inset-top, 0px);
+  }
+  body {
+    @apply bg-[#F4F7FC] font-sans antialiased;
+    color: #1E293B;
+    font-variant-numeric: tabular-nums;
+  }
+  :focus-visible {
+    outline: 3px solid rgb(48 121 151 / 0.45);
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: .01ms !important;
+      transition-duration: .01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }
